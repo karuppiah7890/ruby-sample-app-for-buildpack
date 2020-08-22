@@ -1,0 +1,10 @@
+version: 2.1
+orbs:
+  buildpacks: buildpacks/pack@0.1.4
+workflows:
+  main:
+    jobs:
+      - buildpacks/build:
+          image-name: my-demo-ruby-image
+          builder: "heroku/buildpacks:18"
+          buildpack: "karuppiah7890/demo-ruby-cloud-native-buildpack"
